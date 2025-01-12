@@ -60,8 +60,6 @@ jobs:
         else
           export enable_ccache=on
         fi
-        curl -L https://objects.githubusercontent.com/github-production-release-asset-2e65be/45053736/2f051801-712e-438f-936f-ee2e3ada99b3?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250112T093011Z&X-Amz-Expires=300&X-Amz-Signature=c6ec6c4b0eee07874731b4cae77b0476e2d3acc5a832222c31122c2ff792064f&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DSkia-Windows-Release-x64.zip&response-content-type=application%2Foctet-stream --output skia.zip
-        7z x skia.zip
         cmake -S . -B build -G Ninja \
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
           -DENABLE_UI=${{ matrix.enable_ui }} \
